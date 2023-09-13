@@ -90,7 +90,7 @@ app.get("/showposts",authenticateToken, async (req, res) => {
   let id  = req.user;
   try {
     const response = await axios.get(`${API_URL}/getposts?userid=${id}`);
-    //console.log(response);
+    
     res.render("index.ejs", { posts: response.data });
   } catch (error) {
     res.status(500).json({ message: error });

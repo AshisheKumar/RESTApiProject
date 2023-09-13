@@ -44,10 +44,6 @@ let lastId = 3;
 // Middleware
 
 
-//Write your code here//
-
-
-//CHALLENGE 1: GET All posts
 
 app.get("/getposts",(req,res)=>{
   let userid = parseInt(req.query.userid);
@@ -57,11 +53,11 @@ app.get("/getposts",(req,res)=>{
       userposts.push(v);
     }  
   })
-  //console.log(posts);
+  
   res.json(userposts);
 });
 
-//CHALLENGE 2: GET a specific post by id
+
 
 app.get("/posts/:id/",(req,res)=>{
 
@@ -75,7 +71,6 @@ app.get("/posts/:id/",(req,res)=>{
   }
 });
 
-//CHALLENGE 3: POST a new post
 
 app.post("/newpost",(req,res)=>{
   const newId = posts.length+1;
@@ -92,7 +87,6 @@ app.post("/newpost",(req,res)=>{
   res.status(201).send();
 });
 
-//CHALLENGE 4: PATCH a post when you just want to update one parameter
 
 app.post("/editposts/:id/",(req,res) => {
   let userid = req.body.userid;
@@ -116,7 +110,6 @@ app.post("/editposts/:id/",(req,res) => {
   res.json(foundBlog);
 });
 
-//CHALLENGE 5: DELETE a specific post by providing the post id.
 
 app.post("/deleteposts/:id/",(req,res)=>{
   const foundIndex = posts.findIndex((blog)=>blog.id === parseInt(req.params.id));
