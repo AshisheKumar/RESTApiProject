@@ -134,26 +134,6 @@ app.post("/deleteposts/:id/",(req,res)=>{
 
 });
 
-
-// app.get("/posts", authenticateCRUD, (req, res) => {
-//   // Render your blog posts page
-//   // res.render("index", { posts: posts });
-//   res.json(posts);
-
-// });
-
-
-
-// app.post("/login",authenticateToken,(req,res)=>{
-//   var token = jwt.sign({userid:"1"},secretekey);
-//   res.cookie('user', token);
-//   res.render("index",{posts:posts});
-// });
-
-
-
-
-
 app.listen(port, () => {
   console.log(`API is running at http://localhost:${port}`);
 });
